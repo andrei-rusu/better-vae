@@ -1,0 +1,1 @@
+python -u train-vae.py -e 50 -z 64 -b 64 -x 6 -k 5 -c 30 -l 0.0002 -t imagenet64 -D ../../celeb -m vae-up --evaluate-every 10

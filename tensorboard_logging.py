@@ -19,15 +19,6 @@ class TensorBoardExtension(TensorBoard):
         dummy = torch.rand(inputs.size(), requires_grad=False)
         model_copy = copy.deepcopy(model).to('cpu')
         self.writer.add_graph(model_copy, (dummy,))
-
-class ReconstructionLossLogger(AbstractTensorBoard):
-    
-    def direct_call(self, epoch, metrics):
-        if self.writer == None:
-            self.log_dir = os.path.join(self.log_dir, model.__class__.__name__ + '_' + self.comment)
-            self.writer = self.get_writer(visdom=self.visdom, visdom_params=self.visdom_params)
-        for metric in metrics:
-            self.writer.add_scalar('epoch/' + metric, metrics[metric], epoch)
         
 class TensorBoardModelLogger(AbstractTensorBoard):
     """

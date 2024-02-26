@@ -1,0 +1,1 @@
+python main.py --dataset imagenet --dataroot ../../celeb --workers 3 --batchSize 128 --imageSize 64 --nz 128 --niter 50 --lr 0.0002 --outf output --cuda --limit 300

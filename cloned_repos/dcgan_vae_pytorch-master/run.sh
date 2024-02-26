@@ -1,0 +1,1 @@
+python main.py --dataset cifar10 --dataroot cifar --workers 3 --batchSize 256 --imageSize 32 --nz 64 --niter 100 --lr 0.0002 --outf output --cuda
